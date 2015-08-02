@@ -16,7 +16,7 @@ module JiraApi
     end
 
     def issue(issue)
-      @agent.get("#{@jira_url}issue/#{issue}").body
+      JSON.parse(@agent.get("#{@jira_url}issue/#{issue}").body)
     end
   end
 end
